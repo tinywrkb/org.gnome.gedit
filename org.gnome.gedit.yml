@@ -117,3 +117,16 @@ modules:
                   type: anitya
                   project-id: 1627
                   url-template: https://github.com/libgit2/libgit2/archive/v$version/libgit2-$version.tar.gz
+
+  - name: harfbuzz-runtime
+    config-opts:
+      - --with-gobject
+      - --with-graphite2
+      - --with-icu
+    sources:
+      - type: git
+        url: https://github.com/harfbuzz/harfbuzz
+        # 3.0.0
+        commit: 9c387e20d65a7a366ac270d789f6ad266014c9e0
+      - type: patch
+        path: harfbuzz-face-Clarify-face_index-handling.patch
